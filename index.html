@@ -264,6 +264,7 @@
     position: relative;
     width: 320px;
     height: 200px;
+    overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -331,12 +332,12 @@
 
   .env-seal {
     position: absolute;
-    bottom: 8px;
-    left: 10px;
-    width: 300px;
-    max-width: 300px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
     background: white;
-    border-radius: 6px;
+    border-radius: 0 0 8px 8px;
     z-index: 3;
     padding: 6px 8px;
     transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s, padding 0.7s, width 0.7s, left 0.7s;
@@ -401,6 +402,7 @@
     max-width: 420px;
     padding: 18px 16px;
     align-items: flex-start;
+    border-radius: 12px;
     cursor: default;
   }
 @media (max-width: 600px) {
