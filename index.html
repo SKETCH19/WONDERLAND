@@ -262,8 +262,8 @@
 
   .envelope-container {
     position: relative;
-    width: 280px;
-    height: 190px;
+    width: 320px;
+    height: 200px;
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -273,7 +273,7 @@
   .env-body {
     position: absolute;
     bottom: 0;
-    width: 280px;
+    width: 320px;
     height: 160px;
     background: #ffb3c1;
     border-radius: 4px 4px 8px 8px;
@@ -332,13 +332,13 @@
   .env-seal {
     position: absolute;
     bottom: 8px;
-    left: 14px;
-    width: calc(100% - 28px);
-    max-width: 252px;
+    left: 10px;
+    width: 300px;
+    max-width: 300px;
     background: white;
     border-radius: 6px;
     z-index: 3;
-    padding: 8px 8px;
+    padding: 6px 8px;
     transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s, padding 0.7s, width 0.7s, left 0.7s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
@@ -414,29 +414,32 @@
   }
   .envelope-container {
     width: 98vw;
-    max-width: 99vw;
-    height: auto;
-    min-height: 220px;
+    max-width: 340px;
+    height: 180px;
+    min-height: 180px;
   }
   .env-body {
     width: 98vw;
-    max-width: 99vw;
-    height: 160px;
+    max-width: 340px;
+    height: 120px;
   }
   .card-letter {
-    width: 96vw;
-    max-width: 99vw;
+    width: 92vw;
+    max-width: 300px;
     min-height: 0;
     max-height: 32px;
     padding: 6px 4px;
     font-size: 1.08rem;
     border-radius: 10px;
+    left: 3vw;
   }
   .envelope-container.open .card-letter {
     min-height: 120px;
     max-height: 80vh;
     padding: 16px 6px;
     font-size: 1.13rem;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.08);
   }
   .card-letter-inner {
     font-size: 1.13rem;
