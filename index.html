@@ -1,5 +1,77 @@
 
 <style>
+    html {
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      #app {
+        padding: 1rem 0.2rem;
+        min-height: 100vh;
+        border-radius: 0;
+      }
+      .login-box {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem;
+        font-size: 1rem;
+      }
+      .envelope-container {
+        width: 98vw;
+        max-width: 340px;
+        height: 180px;
+      }
+      .env-body {
+        width: 98vw;
+        max-width: 340px;
+        height: 120px;
+      }
+      .env-flap-bottom,
+      .env-flap-top {
+        border-left: 49vw solid #ff8fa3;
+        border-right: 49vw solid #ff8fa3;
+        max-width: 170px;
+      }
+      .env-flap-top {
+        border-left: 49vw solid transparent;
+        border-right: 49vw solid transparent;
+        border-top: 60px solid #ff4d6d;
+      }
+      .env-flap-left,
+      .env-flap-right {
+        border-top: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 60vw solid #ffa0b4;
+        border-right: 60vw solid #ffa0b4;
+        max-width: 90px;
+      }
+      .env-seal {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+        top: 60px;
+      }
+      .card-letter {
+        width: 90vw;
+        max-width: 320px;
+        min-height: 220px;
+        padding: 10px 6px;
+        font-size: 0.98rem;
+      }
+      .envelope-container.open .card-letter {
+        margin-left: calc(-45vw + 8px);
+        margin-top: -110px;
+      }
+      .card-letter-inner {
+        font-size: 0.98rem;
+        padding: 0 2px;
+      }
+      .card-name {
+        font-size: 1.1rem;
+      }
+      .click-hint {
+        font-size: 0.95rem;
+      }
+    }
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap');
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -294,8 +366,29 @@
   }
 
   .envelope-container.open .card-letter {
-    transform: translateY(-190px);
+    /* El papel sale de la carta y se centra completamente visible */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.08);
+    margin: 0;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(201,24,74,0.18);
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 95vw;
+    max-width: 420px;
   }
+@media (max-width: 600px) {
+  .envelope-container.open .card-letter {
+    width: 98vw;
+    max-width: 99vw;
+    min-height: 60vh;
+    max-height: 90vh;
+    font-size: 1.05rem;
+    padding: 10px 4px;
+  }
+}
 
   .envelope-container.open .card-letter-inner {
     opacity: 1;
