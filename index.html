@@ -319,23 +319,24 @@
 
   .env-seal {
     position: absolute;
-    top: 90px;
-    left: 50%;
-      position: absolute;
-      bottom: 8px;
-      left: 14px;
-      width: calc(100% - 28px);
-      max-width: 252px;
-      background: white;
-      border-radius: 6px;
-      z-index: 3;
-      padding: 14px 10px;
-      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), width 0.7s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    bottom: 8px;
+    left: 14px;
+    width: calc(100% - 28px);
+    max-width: 252px;
+    background: white;
+    border-radius: 6px;
+    z-index: 3;
+    padding: 8px 8px;
+    transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s, padding 0.7s, width 0.7s, left 0.7s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 0;
+    max-height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
       min-height: 80px;
       max-height: 120px;
       font-size: 1rem;
@@ -382,9 +383,13 @@
     z-index: 100;
     box-shadow: 0 8px 32px rgba(201,24,74,0.18);
     max-height: 90vh;
+    min-height: 200px;
     overflow-y: auto;
     width: 95vw;
     max-width: 420px;
+    padding: 18px 16px;
+    align-items: flex-start;
+    cursor: default;
   }
 @media (max-width: 600px) {
   .envelope-container.open .card-letter {
@@ -409,11 +414,17 @@
   .card-letter {
     width: 96vw;
     max-width: 99vw;
-    min-height: 120px;
-    max-height: 180px;
-    padding: 18px 8px;
-    font-size: 1.15rem;
+    min-height: 0;
+    max-height: 32px;
+    padding: 6px 4px;
+    font-size: 1.08rem;
     border-radius: 10px;
+  }
+  .envelope-container.open .card-letter {
+    min-height: 120px;
+    max-height: 80vh;
+    padding: 16px 6px;
+    font-size: 1.13rem;
   }
   .card-letter-inner {
     font-size: 1.13rem;
